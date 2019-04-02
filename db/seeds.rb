@@ -57,7 +57,7 @@ DatabaseCleaner.clean
     industry: "Technology"
   )
 
-  watchist_item1 = WatchlistItem.create!(
+  WatchList_item1 = WatchlistItem.create!(
     name: "Microsoft Corp",
     ticker: "MSFT",
     cap_level: "Large Cap",
