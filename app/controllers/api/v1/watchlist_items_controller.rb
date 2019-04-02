@@ -1,4 +1,4 @@
-class Api::V1::WatchlistItemController < ApplicationController
+class Api::V1::WatchlistItemsController < ApplicationController
 
     before_action :find_watchlist_item, only: [:update]
 

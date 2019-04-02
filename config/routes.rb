@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :games, only: [:index, :update]
         resources :portfolios, only: [:index, :update]
         resources :positions, only: [:index, :update]
-        resources :watchlistItems, only: [:index, :update]
+        resources :watchlist_items, only: [:index, :update]
         resources :stocks, only: [:index, :update]
       end
     end
