@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :portfolios
   has_many :games
   has_many :positions
+  has_many :watchlist_items
 end
