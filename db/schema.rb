@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_151328) do
+ActiveRecord::Schema.define(version: 2019_04_02_151719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,23 @@ ActiveRecord::Schema.define(version: 2019_04_02_151328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "watchlist_items", force: :cascade do |t|
+    t.string "name"
+    t.string "ticker"
+    t.string "cap_level"
+    t.string "industry"
+    t.bigint "portfolio_id"
+    t.bigint "stock_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_watchlist_items_on_portfolio_id"
+    t.index ["stock_id"], name: "index_watchlist_items_on_stock_id"
+  end
+
   add_foreign_key "portfolios", "games"
   add_foreign_key "portfolios", "users"
   add_foreign_key "positions", "portfolios"
   add_foreign_key "positions", "stocks"
+  add_foreign_key "watchlist_items", "portfolios"
+  add_foreign_key "watchlist_items", "stocks"
 end

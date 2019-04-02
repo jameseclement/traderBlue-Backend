@@ -6,7 +6,7 @@ class CreatePositions < ActiveRecord::Migration[5.2]
       t.belongs_to :stock, foreign_key: true
       t.string :ticker
       t.datetime :open_date
-      t.datetime :closedate
+      t.datetime :close_date
       t.float :cost_basis
 
       t.timestamps
