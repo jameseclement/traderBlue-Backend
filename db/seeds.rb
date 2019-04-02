@@ -35,19 +35,20 @@ DatabaseCleaner.clean
     user: james
   )
 
-  position1 = Position.create!(
-    quantity: 100,
-    ticker:AMZN,
-    open_date: DateTime.current(),
-    cost_basis: 1000.00,
-    portfolio: portfolio1,
-    stock: amzn
-  )
   amzn = Stock.create!(
     name: "Amazon.com",
     ticker: "AMZN",
     cap_level: "Large Cap",
     industry: "Technology"
+  )
+  
+  position1 = Position.create!(
+    quantity: 100,
+    ticker:"AMZN",
+    open_date: DateTime.current(),
+    cost_basis: 1000.00,
+    portfolio: portfolio1,
+    stock: amzn
   )
   msft = Stock.create!(
     name: "Microsoft Corporation",

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_04_02_151719) do
   end
 
   create_table "portfolios", force: :cascade do |t|
+    t.string "name"
     t.string "cash"
     t.bigint "user_id"
     t.bigint "game_id"
@@ -41,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_04_02_151719) do
     t.bigint "stock_id"
     t.string "ticker"
     t.datetime "open_date"
-    t.datetime "closedate"
+    t.datetime "close_date"
     t.float "cost_basis"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
