@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @notes
+    render json: @users
   end
 
   def update(user_params)
@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
-  end 
+  end
 
 
 
