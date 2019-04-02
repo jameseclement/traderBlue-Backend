@@ -41,7 +41,7 @@ DatabaseCleaner.clean
     cap_level: "Large Cap",
     industry: "Technology"
   )
-  
+
   position1 = Position.create!(
     quantity: 100,
     ticker:"AMZN",
@@ -56,13 +56,35 @@ DatabaseCleaner.clean
     cap_level: "Large Cap",
     industry: "Technology"
   )
+  fb = Stock.create!(
+    name: "Facebook",
+    ticker: "FB",
+    cap_level: "Large Cap",
+    industry: "Technology"
+  )
 
-  WatchList_item1 = WatchlistItem.create!(
+  watchList_item1 = WatchlistItem.create!(
     name: "Microsoft Corp",
     ticker: "MSFT",
     cap_level: "Large Cap",
     industry: "Technology",
     stock: msft,
+    portfolio: portfolio1
+  )
+  watchList_item2 = WatchlistItem.create!(
+    name: "Amazon.com",
+    ticker: "AMZN",
+    cap_level: "Large Cap",
+    industry: "Technology",
+    stock: amzn,
+    portfolio: portfolio1
+  )
+  watchList_item3 = WatchlistItem.create!(
+    name: "Facebook",
+    ticker: "FB",
+    cap_level: "Large Cap",
+    industry: "Technology",
+    stock: fb,
     portfolio: portfolio1
   )
 
