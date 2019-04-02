@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_145957) do
+ActiveRecord::Schema.define(version: 2019_04_02_151328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,39 @@ ActiveRecord::Schema.define(version: 2019_04_02_145957) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "portfolios", force: :cascade do |t|
+    t.string "cash"
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_portfolios_on_game_id"
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "quantity"
+    t.bigint "portfolio_id"
+    t.bigint "stock_id"
+    t.string "ticker"
+    t.datetime "open_date"
+    t.datetime "closedate"
+    t.float "cost_basis"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_positions_on_portfolio_id"
+    t.index ["stock_id"], name: "index_positions_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name"
+    t.string "ticker"
+    t.string "cap_level"
+    t.string "industry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -35,4 +68,8 @@ ActiveRecord::Schema.define(version: 2019_04_02_145957) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "portfolios", "games"
+  add_foreign_key "portfolios", "users"
+  add_foreign_key "positions", "portfolios"
+  add_foreign_key "positions", "stocks"
 end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: MyString
+  portfolio: one
+  stock: one
+  ticker: MyString
+  open_date: 2019-04-02 11:10:56
+  closedate: 2019-04-02 11:10:56
+  cost_basis: 1.5
+
+two:
+  quantity: MyString
+  portfolio: two
+  stock: two
+  ticker: MyString
+  open_date: 2019-04-02 11:10:56
+  closedate: 2019-04-02 11:10:56
+  cost_basis: 1.5

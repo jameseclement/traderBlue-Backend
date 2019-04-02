@@ -16,7 +16,7 @@ class Api::V1::PortfoliosController < ApplicationController
 
   private
   def portfolio_params
-    params.require(:portfolio).permit(:name, :start_date, :end_date, :starting_cash, :number_of_players)
+    params.require(:portfolio).permit(:name, :cash)
   end
 
   def find_portfolio
