@@ -18,7 +18,8 @@ gem 'database_cleaner'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'rest-client'
+gem 'json'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

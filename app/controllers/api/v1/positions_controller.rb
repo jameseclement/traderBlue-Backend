@@ -1,10 +1,18 @@
+require 'rest-client'
+require 'json'
+
 class Api::V1::PositionsController < ApplicationController
-  before_action :find_position, only: [:update]
+  before_action :find_position, only: [:update, :show]
+
+  def show
+    render json: @position, status: :accepted
+  end
 
   def index
     @positions = Position.all
     render json: @positions
   end
+
 
   def update(position_params)
     if @position.save
