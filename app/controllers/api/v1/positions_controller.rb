@@ -4,6 +4,11 @@ require 'json'
 class Api::V1::PositionsController < ApplicationController
   before_action :find_position, only: [:update, :show]
 
+  def create
+    @position = Position.create!(position_params)
+    render json: @position, status: :accepted
+  end
+
   def show
     render json: @position, status: :accepted
   end
@@ -24,7 +29,7 @@ class Api::V1::PositionsController < ApplicationController
 
   private
   def position_params
-    params.require(:position).permit(:quantity, :ticker, :open_date, :close_date, :cost_basis)
+    params.require(:position).permit(:quantity, :ticker, :open_date, :close_date, :cost_basis, :portfolio_id)
   end
 
   def find_position

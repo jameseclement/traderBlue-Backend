@@ -35,26 +35,32 @@ DatabaseCleaner.clean
     user: james
   )
 
-  amzn = Stock.create!(
-    name: "Amazon.com",
-    ticker: "AMZN",
-    cap_level: "Large Cap",
-    industry: "Technology"
-  )
-
-  msft = Stock.create!(
-    name: "Microsoft Corporation",
-    ticker: "MSFT",
-    cap_level: "Large Cap",
-    industry: "Technology"
-  )
-  
-  fb = Stock.create!(
-    name: "Facebook",
-    ticker: "FB",
-    cap_level: "Large Cap",
-    industry: "Technology"
-  )
+  # amzn = Stock.create!(
+  #   name: "Amazon.com",
+  #   ticker: "AMZN",
+  #   cap_level: "Large Cap",
+  #   industry: "Technology"
+  # )
+  #
+  # msft = Stock.create!(
+  #   name: "Microsoft Corporation",
+  #   ticker: "MSFT",
+  #   cap_level: "Large Cap",
+  #   industry: "Technology"
+  # )
+  #
+  # fb = Stock.create!(
+  #   name: "Facebook",
+  #   ticker: "FB",
+  #   cap_level: "Large Cap",
+  #   industry: "Technology"
+  # )
+  # v = Stock.create!(
+  #   name: "Visa",
+  #   ticker: "V",
+  #   cap_level: "Large Cap",
+  #   industry: "Finance"
+  # )
 
   position1 = Position.create!(
     quantity: 100,
@@ -62,7 +68,7 @@ DatabaseCleaner.clean
     open_date: DateTime.current(),
     cost_basis: 1000.00,
     portfolio: portfolio1,
-    stock: amzn
+    # stock: amzn
   )
   position2 = Position.create!(
     quantity: 100,
@@ -70,7 +76,7 @@ DatabaseCleaner.clean
     open_date: DateTime.current(),
     cost_basis: 100.00,
     portfolio: portfolio1,
-    stock: msft
+    # stock: msft
   )
   position3 = Position.create!(
     quantity: 100,
@@ -78,7 +84,15 @@ DatabaseCleaner.clean
     open_date: DateTime.current(),
     cost_basis: 200.00,
     portfolio: portfolio1,
-    stock: fb
+    # stock: fb
+  )
+  position4 = Position.create!(
+    quantity: 100,
+    ticker:"V",
+    open_date: DateTime.current(),
+    cost_basis: 111.11,
+    portfolio: portfolio1,
+
   )
 
 
@@ -88,7 +102,7 @@ DatabaseCleaner.clean
     ticker: "MSFT",
     cap_level: "Large Cap",
     industry: "Technology",
-    stock: msft,
+    # stock: msft,
     portfolio: portfolio1
   )
   watchList_item2 = WatchlistItem.create!(
@@ -96,7 +110,7 @@ DatabaseCleaner.clean
     ticker: "AMZN",
     cap_level: "Large Cap",
     industry: "Technology",
-    stock: amzn,
+    # stock: amzn,
     portfolio: portfolio1
   )
   watchList_item3 = WatchlistItem.create!(
@@ -104,7 +118,7 @@ DatabaseCleaner.clean
     ticker: "FB",
     cap_level: "Large Cap",
     industry: "Technology",
-    stock: fb,
+    # stock: fb,
     portfolio: portfolio1
   )
 

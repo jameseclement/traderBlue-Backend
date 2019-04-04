@@ -3,14 +3,16 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :users, only: [:index, :update, :show] do
           resources :portfolios, only: [:index, :update, :show] do
-            resources :positions, only: [:index, :update, :show]
+            resources :positions, only: [:index, :update, :show, :create]
           end
         end
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
+        get "positions", to: "positions#index"
 
+        post "positions", to: "positions#create"
         resources :games, only: [:index, :update]
         resources :watchlist_items, only: [:index, :update]
-        resources :stocks, only: [:index, :update]
+        # resources :stocks, only: [:index, :update]
       end
     end
   end
