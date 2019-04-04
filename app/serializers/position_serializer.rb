@@ -1,3 +1,7 @@
+require 'rest-client'
+require 'json'
+
+
 class PositionSerializer < ActiveModel::Serializer
 
 attributes :id, :quantity, :ticker, :open_date, :close_date, :cost_basis, :info

@@ -1,23 +1,23 @@
+require 'rest-client'
+require 'json'
+
 class Api::V1::StocksController < ApplicationController
-  before_action :find_stock, only: [:update]
 
-  def index
-    @stocks = Stock.all
-    render json: @stocks
+
+  def info
+
+    url = "https://api.iextrading.com/1.0/stock/#{params[:ticker]}/batch?types=quote,news"
+    response = RestClient.get(url)
+
+    render json: JSON.parse(response)
+
   end
 
-  def update(stock_params)
-    if @stock.save
-      render json: @stock, status: :accepted
-    else
-      render json: {errors: @stock.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
 
   private
-  
+
   def stock_params
-    params.require(:stock).permit(:ticker, :name, :cap_level, :industry)
+    params.permit(:ticker, :name, :cap_level, :industry)
   end
 
   def find_stock

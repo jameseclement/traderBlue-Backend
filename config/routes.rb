@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         post "positions", to: "positions#create"
         resources :games, only: [:index, :update]
         resources :watchlist_items, only: [:index, :update]
-        # resources :stocks, only: [:index, :update]
+        get "stocks/:ticker", to: "stocks#info"
       end
     end
   end

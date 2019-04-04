@@ -1,3 +1,7 @@
+require 'rest-client'
+require 'json'
+
+
 class Api::V1::PortfoliosController < ApplicationController
   before_action :find_portfolio, only: [:update, :show, :info]
 
@@ -7,7 +11,7 @@ class Api::V1::PortfoliosController < ApplicationController
 
   def info
     symbols = @portfolio.positions.map{|p| p.ticker}.join(",")
-
+byebug
     url = "https://api.iextrading.com/1.0/stock/market/batch?symbols=#{symbols}&types=quote,news"
     response = RestClient.get(url)
     render json: JSON.parse(response)
