@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         end
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
         get "positions", to: "positions#index"
-
+        get "users/:id/portfolios/:id/positions/:ticker", to: "positions#show"
         post "positions", to: "positions#create"
         resources :games, only: [:index, :update]
         resources :watchlist_items, only: [:index, :update]
