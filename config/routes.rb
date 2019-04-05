@@ -3,13 +3,14 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :users, only: [:index, :update, :show] do
           resources :portfolios, only: [:index, :update, :show] do
-            resources :positions, only: [:index, :update, :show, :create]
+            resources :positions, only: [:index, :show, :create]
           end
         end
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
         get "positions", to: "positions#index"
-        get "users/:id/portfolios/:id/positions/:ticker", to: "positions#show"
+        get "users/:user_id/portfolios/:position_id/positions/:ticker", to: "positions#show"
         post "positions", to: "positions#create"
+        patch "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#update"
         resources :games, only: [:index, :update]
         resources :watchlist_items, only: [:index, :update]
         get "stocks/:ticker", to: "stocks#info"

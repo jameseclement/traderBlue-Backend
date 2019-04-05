@@ -10,6 +10,7 @@ class Api::V1::PositionsController < ApplicationController
   end
 
   def show
+
     render json: @position, status: :accepted
   end
 
@@ -19,7 +20,10 @@ class Api::V1::PositionsController < ApplicationController
   end
 
 
-  def update(position_params)
+  def update
+    @position = Position.find_by_ticker(params[:ticker])
+     @position.update!(position_params)
+
     if @position.save
       render json: @position, status: :accepted
     else
