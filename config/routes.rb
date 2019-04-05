@@ -8,9 +8,10 @@ Rails.application.routes.draw do
         end
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
         get "positions", to: "positions#index"
-        get "users/:user_id/portfolios/:position_id/positions/:ticker", to: "positions#show"
+        get "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#show"
         post "positions", to: "positions#create"
         patch "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#update"
+        delete "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#destroy"
         resources :games, only: [:index, :update]
         resources :watchlist_items, only: [:index, :update]
         get "stocks/:ticker", to: "stocks#info"

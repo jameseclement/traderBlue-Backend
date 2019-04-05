@@ -19,6 +19,14 @@ class Api::V1::PositionsController < ApplicationController
     render json: @positions
   end
 
+  def destroy
+
+    @position = Position.find_by_ticker(params[:ticker])
+byebug
+    @position.destroy()
+    render json: @position
+  end
+
 
   def update
     @position = Position.find_by_ticker(params[:ticker])
