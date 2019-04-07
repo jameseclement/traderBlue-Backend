@@ -22,7 +22,7 @@ class Api::V1::PositionsController < ApplicationController
   def destroy
 
     @position = Position.find_by_ticker(params[:ticker])
-byebug
+
     @position.destroy()
     render json: @position
   end
