@@ -22,7 +22,8 @@ byebug
     render json: @portfolios
   end
 
-  def update(portfolio_params)
+  def update
+    @portfolio.update(portfolio_params)
     if @portfolio.save
       render json: @portfolio, status: :accepted
     else
