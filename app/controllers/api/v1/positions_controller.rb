@@ -2,7 +2,7 @@ require 'rest-client'
 require 'json'
 
 class Api::V1::PositionsController < ApplicationController
-  before_action :find_position, only: [ :show]
+   before_action :find_position, only: [ :show]
 
   def create
     @position = Position.create!(position_params)
@@ -45,7 +45,9 @@ class Api::V1::PositionsController < ApplicationController
   end
 
   def find_position
-    @position = Position.find_by_ticker(params[:id])
+    
+    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id])
+
   end
 
 

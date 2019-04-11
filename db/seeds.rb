@@ -35,6 +35,13 @@ DatabaseCleaner.clean
     user: james
   )
 
+  portfolio2 = Portfolio.create!(
+    name: "Second Portfolio",
+    cash: 20000,
+    game: game1,
+    user: james
+  )
+
   # amzn = Stock.create!(
   #   name: "Amazon.com",
   #   ticker: "AMZN",
@@ -86,6 +93,8 @@ DatabaseCleaner.clean
     portfolio: portfolio1,
     # stock: fb
   )
+
+
   position4 = Position.create!(
     quantity: 100,
     ticker:"V",
@@ -93,6 +102,31 @@ DatabaseCleaner.clean
     cost_basis: 111.11,
     portfolio: portfolio1,
 
+  )
+
+  position5 = Position.create!(
+    quantity: 100,
+    ticker:"JNJ",
+    open_date: DateTime.current(),
+    cost_basis: 100.00,
+    portfolio: portfolio2,
+    # stock: amzn
+  )
+  position6 = Position.create!(
+    quantity: 100,
+    ticker:"BA",
+    open_date: DateTime.current(),
+    cost_basis: 100.00,
+    portfolio: portfolio2,
+    # stock: msft
+  )
+  position7 = Position.create!(
+    quantity: 100,
+    ticker:"AAPL",
+    open_date: DateTime.current(),
+    cost_basis: 200.00,
+    portfolio: portfolio2,
+    # stock: fb
   )
 
 
