@@ -1,30 +1,20 @@
 class Api::V1::WatchlistItemsController < ApplicationController
 
-    before_action :find_watchlist_item, only: [:update]
+
 
     def index
       @watchlist_items = WatchlistItem.all
       render json: @watchlist_items
     end
 
-    def update(watchlist_item_params)
-      if @watchlist_item.save
+    def create
+      
+        @watchlist_item = WatchlistItem.create!(watchlist_item_params)
         render json: @watchlist_item, status: :accepted
-      else
-        render json: {errors: @watchlist_item.errors.full_messages }, status: :unprocessable_entity
-      end
     end
 
     private
     def watchlist_item_params
-      params.require(:watchlist_item).permit(:ticker, :name, :cap_level, :industry)
+      params.require(:watchlist_item).permit(:ticker, :name, :cap_level, :industry, :portfolio_id)
     end
-
-    def find_watchlist_item
-      @watchlist_item = WatchlistItem.find(params[:id])
-    end
-
-
-
-
 end

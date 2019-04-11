@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         patch "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#update"
         delete "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#destroy"
         resources :games, only: [:index, :update]
-        resources :watchlist_items, only: [:index, :update]
+        resources :watchlist_items, only: [:index, :create]
         get "stocks/:ticker", to: "stocks#info"
       end
     end
