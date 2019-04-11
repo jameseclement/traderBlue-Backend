@@ -3,7 +3,7 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :users, only: [:index, :update, :show] do
           resources :portfolios, only: [:index, :update, :show] do
-            resources :positions, only: [:index, :show, :create]
+            resources :positions, only: [:index, :show, :create, :update]
           end
         end
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
