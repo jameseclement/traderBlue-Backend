@@ -44,7 +44,7 @@ class Api::V1::PositionsController < ApplicationController
 
   def find_position
 
-    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id], user_id: params[:user_id])
+    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id])
 
   end
 
