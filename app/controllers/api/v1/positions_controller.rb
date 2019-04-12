@@ -20,9 +20,7 @@ class Api::V1::PositionsController < ApplicationController
   end
 
   def destroy
-
-    @position = Position.find_by_ticker(params[:ticker])
-
+    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id])
     @position.destroy()
     render json: @position
   end
