@@ -39,12 +39,12 @@ class Api::V1::PositionsController < ApplicationController
 
   private
   def position_params
-    params.require(:position).permit(:quantity, :ticker, :open_date, :close_date, :cost_basis, :portfolio_id)
+    params.require(:position).permit(:quantity, :ticker, :open_date, :close_date, :cost_basis, :portfolio_id, :user_id)
   end
 
   def find_position
 
-    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id])
+    @position = Position.find_by(ticker: (params[:id]).upcase, portfolio_id: params[:portfolio_id], user_id: params[:user_id])
 
   end
 

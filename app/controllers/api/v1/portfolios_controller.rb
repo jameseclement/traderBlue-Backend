@@ -33,11 +33,12 @@ byebug
 
   private
   def portfolio_params
-    params.require(:portfolio).permit(:name, :cash)
+    params.require(:portfolio).permit(:name, :cash, :user_id)
   end
 
   def find_portfolio
-    @portfolio = Portfolio.find(params[:id])
+    @portfolio = Portfolio.find_by(id: params[:id], user_id: params[:user_id])
+
   end
 
 end

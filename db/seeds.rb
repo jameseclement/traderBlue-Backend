@@ -20,6 +20,14 @@ DatabaseCleaner.clean
     last_name: "Clement"
   )
 
+  haley = User.create!(
+    username: "haley",
+    password_digest: '123',
+    email: "haley@haley.com",
+    first_name: "Haley",
+    last_name: "Clement"
+  )
+
   game1 = Game.create!(
     name: "Game1",
     start_date: DateTime.current(),
@@ -40,6 +48,20 @@ DatabaseCleaner.clean
     cash: 20000,
     game: game1,
     user: james
+  )
+
+  portfolio3 = Portfolio.create!(
+    name: "Third Portfolio",
+    cash: 30000,
+    game: game1,
+    user: haley
+  )
+
+  portfolio4 = Portfolio.create!(
+    name: "Fourth Portfolio",
+    cash: 40000,
+    game: game1,
+    user: haley
   )
 
   # amzn = Stock.create!(
@@ -128,6 +150,40 @@ DatabaseCleaner.clean
     portfolio: portfolio2,
     # stock: fb
   )
+
+  position8 = Position.create!(
+    quantity: 100,
+    ticker:"AMD",
+    open_date: DateTime.current(),
+    cost_basis: 100.00,
+    portfolio: portfolio3,
+    # stock: msft
+  )
+  position9 = Position.create!(
+    quantity: 100,
+    ticker:"MU",
+    open_date: DateTime.current(),
+    cost_basis: 200.00,
+    portfolio: portfolio3,
+    # stock: fb
+  )
+  position10 = Position.create!(
+    quantity: 100,
+    ticker:"NVDA",
+    open_date: DateTime.current(),
+    cost_basis: 100.00,
+    portfolio: portfolio4,
+    # stock: msft
+  )
+  position11 = Position.create!(
+    quantity: 100,
+    ticker:"X",
+    open_date: DateTime.current(),
+    cost_basis: 200.00,
+    portfolio: portfolio4,
+    # stock: fb
+  )
+
 
 
 
