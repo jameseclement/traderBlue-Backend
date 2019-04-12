@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
         get "positions", to: "positions#index"
         get "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#show"
-        post "positions", to: "positions#create"
+        post "users/:user_id/portfolios/portfolio_id/positions", to: "positions#create"
         patch "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#update"
         delete "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#destroy"
         resources :games, only: [:index, :update]
