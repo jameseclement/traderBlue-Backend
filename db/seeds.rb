@@ -14,7 +14,7 @@ DatabaseCleaner.clean
 
   james = User.create!(
     username: "james",
-    password_digest: '123',
+    password: '123',
     email: "james@james.com",
     first_name: "James",
     last_name: "Clement"
@@ -22,7 +22,7 @@ DatabaseCleaner.clean
 
   haley = User.create!(
     username: "haley",
-    password_digest: '123',
+    password: '123',
     email: "haley@haley.com",
     first_name: "Haley",
     last_name: "Clement"
