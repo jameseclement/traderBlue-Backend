@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   private
    def secret_key
-     'h3llo'
+     Rails.application.credentials.secret_auth_key
    end
 
    #given a payload, return a token
