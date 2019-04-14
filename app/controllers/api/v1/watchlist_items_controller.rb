@@ -8,10 +8,16 @@ class Api::V1::WatchlistItemsController < ApplicationController
     end
 
     def create
-
         @watchlist_item = WatchlistItem.create!(watchlist_item_params)
         render json: @watchlist_item, status: :accepted
     end
+
+    def destroy
+      @watchlist_item = WatchlistItem.find_by(user_id: params[:user_id], ticker: (params[:ticker]).upcase)
+      @watchlist_item.destroy()
+      render json: @watchlist_item
+    end
+
 
     private
     def watchlist_item_params

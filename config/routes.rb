@@ -13,7 +13,10 @@ Rails.application.routes.draw do
         get "users/:id/portfolios/:id/info", to: "portfolios#info"
         get "positions", to: "positions#index"
         get "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#show"
-        get "users/:user_id/watchlist_items", to: "watchlist_items#index" 
+        get "users/:user_id/watchlist_items", to: "watchlist_items#index"
+        post "users/:user_id/watchlist_items", to: "watchlist_items#create"
+        delete "users/:user_id/watchlist_items/:ticker", to: "watchlist_items#destroy" 
+
         post "users/:user_id/portfolios/portfolio_id/positions", to: "positions#create"
         patch "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#update"
         delete "users/:user_id/portfolios/:portfolio_id/positions/:ticker", to: "positions#destroy"
