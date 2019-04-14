@@ -1,6 +1,7 @@
 class WatchlistItemSerializer < ActiveModel::Serializer
   attributes :id, :name, :ticker, :cap_level, :industry, :news
-  belongs_to :portfolio
+  # belongs_to :portfolio
+  belongs_to :user
   # belongs_to :stock
 
 def news

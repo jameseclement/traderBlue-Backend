@@ -192,36 +192,36 @@ DatabaseCleaner.clean
     ticker: "MSFT",
     cap_level: "Large Cap",
     industry: "Technology",
-    # stock: msft,
-    portfolio: portfolio1
+    user: james,
+    # portfolio: portfolio1
   )
   watchList_item2 = WatchlistItem.create!(
     name: "Amazon.com",
     ticker: "AMZN",
     cap_level: "Large Cap",
     industry: "Technology",
-    # stock: amzn,
-    portfolio: portfolio1
+    user: james,
+    # portfolio: portfolio1
   )
   watchList_item3 = WatchlistItem.create!(
     name: "Facebook",
     ticker: "FB",
     cap_level: "Large Cap",
     industry: "Technology",
-    # stock: fb,
-    portfolio: portfolio1
+    user: james,
+    # portfolio: portfolio1
   )
 
 
-
-#   5.times do
-#     doc = Document.create!(user: user, title: Faker::Book.title)
-#
-#     Faker::Number.between(1, 6).times do
-#       Version.create!(
-#         document: doc,
-#         data: data_url
-#       )
-#     end
-#   end
-# end
+  watchList_item4= WatchlistItem.create!(
+    ticker: "NVDA",
+    user: haley,
+  )
+  watchList_item5= WatchlistItem.create!(
+      ticker: "AMD",
+      user: haley,
+    )
+  watchList_item6= WatchlistItem.create!(
+        ticker: "QQQ",
+        user: haley,
+      )

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_192250) do
+ActiveRecord::Schema.define(version: 2019_04_14_181442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,8 +78,10 @@ ActiveRecord::Schema.define(version: 2019_04_05_192250) do
     t.bigint "stock_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["portfolio_id"], name: "index_watchlist_items_on_portfolio_id"
     t.index ["stock_id"], name: "index_watchlist_items_on_stock_id"
+    t.index ["user_id"], name: "index_watchlist_items_on_user_id"
   end
 
   add_foreign_key "portfolios", "games"
@@ -88,4 +90,5 @@ ActiveRecord::Schema.define(version: 2019_04_05_192250) do
   add_foreign_key "positions", "stocks"
   add_foreign_key "watchlist_items", "portfolios"
   add_foreign_key "watchlist_items", "stocks"
+  add_foreign_key "watchlist_items", "users"
 end
