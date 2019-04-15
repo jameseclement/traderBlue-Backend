@@ -6,7 +6,7 @@ class PositionSerializer < ActiveModel::Serializer
 
 attributes :id, :quantity, :ticker, :open_date, :close_date, :cost_basis, :info
  belongs_to :portfolio
- 
+
 # belongs_to :stock
 
 def info
@@ -15,6 +15,12 @@ def info
   response = RestClient.get(url)
   return JSON.parse(response)
 end
+
+# def value
+#   price = object.info.quote.latestPrice
+#   quantity = object.quantity
+#   return JSON.parse(price * quantity)
+# end
 
 
 end
