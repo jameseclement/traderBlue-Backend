@@ -250,9 +250,9 @@ DatabaseCleaner.clean
 
   position8b = Position.create!(
     quantity: 120,
-    ticker:"AMD",
+    ticker:"TLRY",
     open_date: DateTime.current(),
-    cost_basis: 6.23,
+    cost_basis: 100.00,
     portfolio: portfolio3,
     # stock: msft
   )
