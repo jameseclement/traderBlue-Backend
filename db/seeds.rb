@@ -335,14 +335,17 @@ DatabaseCleaner.clean
 
 
   watchList_item4= WatchlistItem.create!(
+    name: "NVIDIA Corporation",
     ticker: "NVDA",
     user: haley,
   )
   watchList_item5= WatchlistItem.create!(
+      name: "Advanced Micro Devices Inc.",
       ticker: "AMD",
       user: haley,
     )
   watchList_item6= WatchlistItem.create!(
+        name: "Invesco QQQ Trust Series 1",
         ticker: "QQQ",
         user: haley,
       )
