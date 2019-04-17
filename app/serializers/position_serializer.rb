@@ -4,7 +4,7 @@ require 'json'
 
 class PositionSerializer < ActiveModel::Serializer
 
-attributes :id, :quantity, :ticker, :open_date, :close_date, :cost_basis, :info
+attributes :id, :quantity, :ticker, :open_date, :close_date, :cost_basis, :info, :value, :cost
  belongs_to :portfolio
 
 # belongs_to :stock
@@ -16,11 +16,16 @@ def info
   return JSON.parse(response)
 end
 
-# def value
-#   price = object.info.quote.latestPrice
-#   quantity = object.quantity
-#   return JSON.parse(price * quantity)
-# end
+def value
+  url = "https://api.iextrading.com/1.0/stock/#{object.ticker}/batch?types=quote,news"
+  response = RestClient.get(url)
+  price = JSON.parse(response)["quote"]["latestPrice"]
+  quantity = object.quantity
+  return (price * quantity)
+end
 
+def cost
+  object.cost_basis * object.quantity
+end
 
 end
