@@ -154,7 +154,41 @@ DatabaseCleaner.clean
 
   )
 
-  
+  position1b = Position.create!(
+    quantity: 34,
+    ticker:"QCOM",
+    open_date: DateTime.current(),
+    cost_basis: 70.34,
+    portfolio: portfolio1,
+    # stock: amzn
+  )
+  position2b = Position.create!(
+    quantity: 98,
+    ticker:"SQ",
+    open_date: DateTime.current(),
+    cost_basis: 73.12,
+    portfolio: portfolio1,
+    # stock: msft
+  )
+  position3b = Position.create!(
+    quantity: 3,
+    ticker:"UNH",
+    open_date: DateTime.current(),
+    cost_basis: 230.10,
+    portfolio: portfolio1,
+    # stock: fb
+  )
+
+
+  position4b = Position.create!(
+    quantity: 88,
+    ticker:"SHOP",
+    open_date: DateTime.current(),
+    cost_basis: 188.89,
+    portfolio: portfolio1,
+
+  )
+
 
   position5 = Position.create!(
     quantity: 82,
