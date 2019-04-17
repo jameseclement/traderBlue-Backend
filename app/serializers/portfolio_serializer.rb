@@ -1,10 +1,10 @@
 class PortfolioSerializer < ActiveModel::Serializer
   attributes :id, :name, :cash, :user_id, :game_id
   # :info
-  belongs_to :user
-  belongs_to :game
+  # belongs_to :user
+  # belongs_to :game
   has_many :positions
-  has_many :watchlist_items
+  # has_many :watchlist_items
 
   # def info
   #
