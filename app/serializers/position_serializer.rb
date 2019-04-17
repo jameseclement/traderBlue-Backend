@@ -4,7 +4,7 @@ require 'json'
 
 class PositionSerializer < ActiveModel::Serializer
 
-attributes :id, :quantity, :ticker, :open_date, :close_date, :cost_basis, :info, :value, :cost
+attributes :id, :quantity, :ticker, :cost_basis, :info, :value, :cost
  belongs_to :portfolio
 
 # belongs_to :stock

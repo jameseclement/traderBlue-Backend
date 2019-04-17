@@ -94,7 +94,6 @@ DatabaseCleaner.clean
   position1 = Position.create!(
     quantity: 10,
     ticker:"AMZN",
-    open_date: DateTime.current(),
     cost_basis: 1000.00,
     portfolio: portfolio1,
     # stock: amzn
@@ -102,7 +101,6 @@ DatabaseCleaner.clean
   position2 = Position.create!(
     quantity: 34,
     ticker:"MSFT",
-    open_date: DateTime.current(),
     cost_basis: 100.00,
     portfolio: portfolio1,
     # stock: msft
@@ -110,7 +108,6 @@ DatabaseCleaner.clean
   position3 = Position.create!(
     quantity: 18,
     ticker:"FB",
-    open_date: DateTime.current(),
     cost_basis: 200.00,
     portfolio: portfolio1,
     # stock: fb
@@ -120,7 +117,6 @@ DatabaseCleaner.clean
   position4 = Position.create!(
     quantity: 32,
     ticker:"V",
-    open_date: DateTime.current(),
     cost_basis: 111.11,
     portfolio: portfolio1,
 
@@ -130,7 +126,6 @@ DatabaseCleaner.clean
   position1a = Position.create!(
     quantity: 102,
     ticker:"GS",
-    open_date: DateTime.current(),
     cost_basis: 180.00,
     portfolio: portfolio1,
     # stock: amzn
@@ -138,7 +133,6 @@ DatabaseCleaner.clean
   position2a = Position.create!(
     quantity: 40,
     ticker:"SPY",
-    open_date: DateTime.current(),
     cost_basis: 260.00,
     portfolio: portfolio1,
     # stock: msft
@@ -146,7 +140,6 @@ DatabaseCleaner.clean
   position3a = Position.create!(
     quantity: 17,
     ticker:"QQQ",
-    open_date: DateTime.current(),
     cost_basis: 170.00,
     portfolio: portfolio1,
     # stock: fb
@@ -156,52 +149,16 @@ DatabaseCleaner.clean
   position4a = Position.create!(
     quantity: 32,
     ticker:"NKE",
-    open_date: DateTime.current(),
     cost_basis: 90.00,
     portfolio: portfolio1,
 
   )
 
-  position1b = Position.create!(
-    quantity: 34,
-    ticker:"QCOM",
-    open_date: DateTime.current(),
-    cost_basis: 70.34,
-    portfolio: portfolio1,
-    # stock: amzn
-  )
-  position2b = Position.create!(
-    quantity: 98,
-    ticker:"SQ",
-    open_date: DateTime.current(),
-    cost_basis: 73.12,
-    portfolio: portfolio1,
-    # stock: msft
-  )
-  position3b = Position.create!(
-    quantity: 3,
-    ticker:"UNH",
-    open_date: DateTime.current(),
-    cost_basis: 230.10,
-    portfolio: portfolio1,
-    # stock: fb
-  )
-
-
-  position4b = Position.create!(
-    quantity: 88,
-    ticker:"SHOP",
-    open_date: DateTime.current(),
-    cost_basis: 188.89,
-    portfolio: portfolio1,
-
-  )
-
+  
 
   position5 = Position.create!(
     quantity: 82,
     ticker:"JNJ",
-    open_date: DateTime.current(),
     cost_basis: 101.20,
     portfolio: portfolio2,
     # stock: amzn
@@ -209,7 +166,6 @@ DatabaseCleaner.clean
   position6 = Position.create!(
     quantity: 14,
     ticker:"BA",
-    open_date: DateTime.current(),
     cost_basis: 100.00,
     portfolio: portfolio2,
     # stock: msft
@@ -217,7 +173,6 @@ DatabaseCleaner.clean
   position7 = Position.create!(
     quantity: 111,
     ticker:"AAPL",
-    open_date: DateTime.current(),
     cost_basis: 201.00,
     portfolio: portfolio2,
     # stock: fb
@@ -226,7 +181,6 @@ DatabaseCleaner.clean
   position5a = Position.create!(
     quantity: 4,
     ticker:"X",
-    open_date: DateTime.current(),
     cost_basis: 25.00,
     portfolio: portfolio2,
     # stock: amzn
@@ -234,7 +188,6 @@ DatabaseCleaner.clean
   position6a = Position.create!(
     quantity: 12,
     ticker:"Z",
-    open_date: DateTime.current(),
     cost_basis: 39.99,
     portfolio: portfolio2,
     # stock: msft
@@ -242,7 +195,6 @@ DatabaseCleaner.clean
   position7a = Position.create!(
     quantity: 100,
     ticker:"MU",
-    open_date: DateTime.current(),
     cost_basis: 20.00,
     portfolio: portfolio2,
     # stock: fb
@@ -252,90 +204,19 @@ DatabaseCleaner.clean
   position8 = Position.create!(
     quantity: 12,
     ticker:"AMD",
-    open_date: DateTime.current(),
     cost_basis: 19.12,
     portfolio: portfolio3,
     # stock: msft
   )
-  position9 = Position.create!(
-    quantity: 78,
-    ticker:"NFLX",
-    open_date: DateTime.current(),
-    cost_basis: 322.00,
-    portfolio: portfolio3,
-    # stock: fb
-  )
-
-  position8a = Position.create!(
-    quantity: 57,
-    ticker:"TSLA",
-    open_date: DateTime.current(),
-    cost_basis: 300.00,
-    portfolio: portfolio3,
-    # stock: msft
-  )
-  position9a = Position.create!(
-    quantity: 100,
-    ticker:"QQQ",
-    open_date: DateTime.current(),
-    cost_basis: 140.23,
-    portfolio: portfolio3,
-    # stock: fb
-  )
-
-  position8b = Position.create!(
-    quantity: 120,
-    ticker:"TLRY",
-    open_date: DateTime.current(),
-    cost_basis: 100.00,
-    portfolio: portfolio3,
-    # stock: msft
-  )
-  position9b = Position.create!(
-    quantity: 100,
-    ticker:"JNJ",
-    open_date: DateTime.current(),
-    cost_basis: 98.82,
-    portfolio: portfolio3,
-    # stock: fb
-  )
-
-
-
 
   position10 = Position.create!(
     quantity: 100,
     ticker:"NVDA",
-    open_date: DateTime.current(),
     cost_basis: 113.20,
     portfolio: portfolio4,
     # stock: msft
   )
-  position11 = Position.create!(
-    quantity: 403,
-    ticker:"X",
-    open_date: DateTime.current(),
-    cost_basis: 10.00,
-    portfolio: portfolio4,
-    # stock: fb
-  )
 
-  position10a = Position.create!(
-    quantity: 100,
-    ticker:"JNJ",
-    open_date: DateTime.current(),
-    cost_basis: 64.00,
-    portfolio: portfolio4,
-    # stock: msft
-  )
-  position11a = Position.create!(
-    quantity: 100,
-    ticker:"SPY",
-    open_date: DateTime.current(),
-    cost_basis: 200.03,
-    portfolio: portfolio4,
-    # stock: fb
-  )
 
 
 
