@@ -38,26 +38,41 @@ DatabaseCleaner.clean
 
   portfolio1 = Portfolio.create!(
     name: "James' ROTH IRA",
-    cash: 10000,
+    cash: 12223.90,
     game: game1,
     user: james
   )
 
   portfolio2 = Portfolio.create!(
     name: "James' Taxable Brokerage Account",
-    cash: 20000,
+    cash: 20034.32,
     game: game1,
     user: james
   )
 
   portfolio3 = Portfolio.create!(
+    name: "James' 401k",
+    cash: 1423.23,
+    game: game1,
+    user: james
+  )
+
+  portfolio4 = Portfolio.create!(
+    name: "James' Interesting Bets",
+    cash: 7834.22,
+    game: game1,
+    user: james
+  )
+
+
+  portfolio5 = Portfolio.create!(
     name: "Haley's 401k",
     cash: 30000,
     game: game1,
     user: haley
   )
 
-  portfolio4 = Portfolio.create!(
+  portfolio6 = Portfolio.create!(
     name: "Kid's College Fund",
     cash: 40000,
     game: game1,
@@ -143,50 +158,6 @@ DatabaseCleaner.clean
     cost_basis: 170.00,
     portfolio: portfolio1,
     # stock: fb
-  )
-
-
-  position4a = Position.create!(
-    quantity: 32,
-    ticker:"NKE",
-    cost_basis: 90.00,
-    portfolio: portfolio1,
-
-  )
-
-  position1b = Position.create!(
-    quantity: 34,
-    ticker:"QCOM",
-    open_date: DateTime.current(),
-    cost_basis: 70.34,
-    portfolio: portfolio1,
-    # stock: amzn
-  )
-  position2b = Position.create!(
-    quantity: 98,
-    ticker:"SQ",
-    open_date: DateTime.current(),
-    cost_basis: 73.12,
-    portfolio: portfolio1,
-    # stock: msft
-  )
-  position3b = Position.create!(
-    quantity: 3,
-    ticker:"UNH",
-    open_date: DateTime.current(),
-    cost_basis: 230.10,
-    portfolio: portfolio1,
-    # stock: fb
-  )
-
-
-  position4b = Position.create!(
-    quantity: 88,
-    ticker:"SHOP",
-    open_date: DateTime.current(),
-    cost_basis: 188.89,
-    portfolio: portfolio1,
-
   )
 
 
